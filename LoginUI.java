@@ -5,7 +5,7 @@ import java.awt.event.*;
 public class LoginUI implements ActionListener {
 
     JFrame frame = new JFrame();
-    JLabel header = new JLabel();
+    JLabel header;
     JTextField username;
     JTextField password;
     JButton login = new JButton();
@@ -36,6 +36,7 @@ public class LoginUI implements ActionListener {
         login.setBounds(45, 165, 200, 25);
         login.setFont(myFont);
         login.setFocusable(false);
+        login.addActionListener(this);
 
         frame.add(header);
         frame.add(login);
@@ -54,6 +55,6 @@ public class LoginUI implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        System.out.println(username.getText() + " has logged in");
     }
 }
